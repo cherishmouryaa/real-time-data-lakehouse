@@ -1,0 +1,8 @@
+{
+  "paths": {
+    "bronze": "data/bronze/orders_bronze.csv",
+    "silver": "data/silver/orders_silver",
+    "gold_product": "data/gold/product_metrics",
+    "gold_customer": "data/gold/customer_metrics"
+  }
+}

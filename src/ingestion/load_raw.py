@@ -1,34 +1,52 @@
-import sys
-import os
 import pandas as pd
+import random
 
-sys.path.append(
-os.path.dirname(
-os.path.dirname(
-os.path.abspath(__file__)
-))
-)
+rows = 10000
 
-from utils.logger import logger
+products = [
+    (500, "iPhone", "Electronics"),
+    (501, "Laptop", "Electronics"),
+    (502, "Shoes", "Fashion"),
+    (503, "Watch", "Fashion")
+]
 
-logger.info("Pipeline started")
+customers = [
+    (100, "Rahul"),
+    (101, "Amit"),
+    (102, "Kiran"),
+    (103, "Sneha")
+]
 
-orders = pd.read_csv(
-'../data/raw/orders.csv'
-)
+cities = ["Hyderabad", "Bangalore", "Chennai", "Delhi"]
 
-customers = pd.read_csv(
-'../data/raw/customers.csv'
-)
+data = []
 
-merged = orders.merge(
-customers,
-on='customer_id'
-)
+for i in range(rows):
+    product = random.choice(products)
+    customer = random.choice(customers)
 
-merged.to_csv(
-'../data/bronze/orders_bronze.csv',
-index=False
-)
+    data.append([
+        i,
+        customer[0],
+        customer[1],   # customer_name
+        product[0],
+        product[1],    # product_name
+        product[2],    # category
+        random.randint(100, 2000),
+        random.choice(cities)
+    ])
 
-logger.info("Bronze layer loaded")
+df = pd.DataFrame(data, columns=[
+    "order_id",
+    "customer_id",
+    "customer_name",
+    "product_id",
+    "product_name",
+    "category",
+    "amount",
+    "city"
+])
+
+df.to_csv("data/bronze/orders_bronze.csv", index=False)
+
+print("Real dataset generated")
