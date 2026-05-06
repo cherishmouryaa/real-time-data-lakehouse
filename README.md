@@ -1,5 +1,7 @@
 # Real-Time Data Lakehouse Platform
+## 📊 Dashboard Preview
 
+![Dashboard](dashboard.png)
 ## Overview
 Production-style Data Engineering project using:
 
