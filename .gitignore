@@ -1,4 +1,28 @@
+# Python
 __pycache__/
 *.pyc
-.env
+
+# Spark
+spark-warehouse/
+metastore_db/
+
+# VS Code
 .vscode/
+
+# Data files
+data/bronze/
+data/silver/
+data/gold/
+
+# Logs
+logs/
+
+# Environment
+.env
+
+# PostgreSQL JDBC Driver
+drivers/
+
+# OS files
+.DS_Store
+Thumbs.db

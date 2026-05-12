@@ -112,3 +112,6 @@ python generate_data.py
 python -m src.transformations.silver_layer
 python -m src.transformations.gold_layer
 streamlit run app.py
+
+## 🔗 Live Demo
+https://your-app.streamlit.app
